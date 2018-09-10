@@ -23,12 +23,12 @@ function verificar() {
 
                     alert[(]?       alert(
                     <[!?]           <!,  <?
-                    <h[1-5]>        h1, h2, h3, h4 ,h5
+                    <h[1-5]>        <h1>, h2, h3, h4 ,h5
 
     
     
     */
-    var rta = exp1.test(consulta);
+    var rta = exp1.test(consulta); //evalua la expresion con una cadena que ingresaste
 
     if (rta != true) {
         alert("verdadero: su pagina es segura: " + consulta);
