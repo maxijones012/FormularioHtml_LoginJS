@@ -7,9 +7,12 @@ console.log(valor);*/
 
 
 function verificar() {
-    var consulta = String(document.getElementById('textConsulta').value);
-    var res = document.getElementById("res");
-    // document.getElementById('res').value = consulta;
+
+
+
+    var textUsuario = String(document.getElementById('texttextUsuario').value);
+
+
 
     //CREO EL NUEVO ELEMENTO
     var nuevoElemento = document.createElement("h2"); //crea un elemento HTML especificado por su tagName
@@ -28,16 +31,48 @@ function verificar() {
     
     
     */
-    var rta = exp1.test(consulta); //evalua la expresion con una cadena que ingresaste
+    var rta = exp1.test(textUsuario); //evalua la expresion con una cadena que ingresaste
 
     if (rta != true) {
-        alert("verdadero: su pagina es segura: " + consulta);
+        alert("verdadero: su pagina es segura: " + textUsuario);
 
     } else {
-        alert("ERROR: SU PAGINA CONTIENE SCRIPT: " + consulta);
+        alert("ERROR: SU PAGINA CONTIENE SCRIPT: " + textUsuario);
         //res.innerHTML = "SU PAGINA ES SEGURA";
 
 
+    }
+
+}
+
+
+function verificarSQL() {
+    var txtUser = document.getElementById("textUsuario");
+    var txtPass = document.getElementById("txtPass");
+    var txtRespuesta = document.getElementById("txtResultado");
+
+    //var expresion = /'(\s)*[;]*(AND|OR|SELECT|INTO|DROP|TABLE|COUNT)/;
+    var expresion = /'?/;
+
+
+    var result = expresion.test(txtPass);
+
+
+
+
+
+    if (!result) {
+        alert("USUARIO Y CONTRASEÑA CORRECTOS");
+
+        var newElemt = document.createElement("h2");
+        var newContent = document.createTextNode("USUARIO Y CONTRASEÑA CORRECTOS" + "\n" + "User: " + txtUser.value + "\n" + "Pass: " + txtPass.value);
+        newElemt.appendChild(newContent);
+        document.getElementById("txtResultado").appendChild(newElemt);
+
+
+
+    } else {
+        alert("ERROR EN LA CONSULTA");
     }
 
 }

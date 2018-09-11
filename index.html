@@ -2,27 +2,31 @@
 <html lang="es" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
-  <title>Laboratorio 2018 Javascript</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8">
+    <title>Laboratorio 2018 Javascript</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 
 <body>
-  <div class="form">
-    <div class="contenedor-form">
-      <h2>Ingrese consulta</h2>
-      <form action="#">
-        <input id="textConsulta" type="text" placeholder="Consulta tu sitio">
-        <input id="btnGenerar"type="submit" value="Generar Consulta" onclick="verificar()">
-        <input id="res" type="text" placeholder="Resultado">
-      </form>
+    <div class="form">
+        <div class="contenedor-form">
+            <h2>Ingrese consulta</h2>
+            <form action="#">
+                <input id="textUsuario" type="text" placeholder="Usuario">
+                <input id="txtPass" type="text" placeholder="Contraseña">
+                <input id="btnGenerar" type="submit" value="Generar Consulta" onclick="verificarSQL()">
 
+                <output>
+                    <h2 id="txtResultado"></h2>
+                </output>
+            </form>
+
+        </div>
+
+        </form>
     </div>
-
-    </form>
-  </div>
-  <script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

@@ -72,3 +72,11 @@ h2 {
     transition: all .5s ease;
     background: rgba(0, 117, 217, 0.7);
 }
+
+.resultado {
+    padding: 20px 30px;
+    text-align: center;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid white;
+}
