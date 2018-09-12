@@ -13,41 +13,36 @@ function verificarSQL() {
     var txtPass = document.getElementById("txtPass").value;
     var txtResultado = document.getElementById("txtResultado");
 
-    //var expresion = /'(\s)*[;]*(AND|OR|SELECT|INTO|DROP|TABLE|COUNT)/
+
+    var res = /[']/.test(txtPass);
+    var res2 = /AND(\s|\w)+NULL/.test(txtPass);
+    var res3 = /SELECT\s+COUNT[(][*][)]\s+(FROM)?/.test(txtPass);
+    var res5 = /INSERT\s+INTO/.test(txtPass);
+    var res6 = /(DROP\s+TABLE)/.test(txtPass);
+    var res4 = /(OR(\s+|\w)+LIKE)/.test(txtPass);
 
 
-    // var expresion = /^[A-Z]{4}\S[0-9]+$/; //si se cumple si devuelve VERDADERO
-    //var iny1 = /\s/;
-
-    var iny5 = /INSERT\s+INTO/;
-    var iny6 = /(DROP\s+TABLE)/;
-    var iny3 = /SELECT\s+COUNT([*])/;
-
-    /*
-     */
-    // var expresion = /(SELECT|INSERT|(DROP\s+TABLE)|((AND|OR)\s=))/;
-    //   var expresion = /( [']&((INSERT\s+INTO) | (DROP\s+TABLE) | (SELECT\s+COUNT([*])\s FROM)) )/;
-
-    var res1 = iny5.test(txtPass);
-    var res2 = iny3.test(txtPass);
-    var res3 = iny6.test(txtPass);
+    //  var res7 = /([0-9][=][0-9])/.test(txtPass);
 
 
+    if ((!res) & ((!res3) | (!res5) | (!res6) | (!res2) | (!res4))) { //ESTO NO SE CAMBIA
 
-
-    if (!res1) { //ESTO NO SE CAMBIA
         alert("USUARIO Y CONTRASEÑA CORRECTOS");
         /*
-                var newElemt = document.createElement("h2");
-                var newContent = document.createTextNode("USUARIO Y CONTRASEÑA CORRECTOS" + "\n" + "User: " + txtUser.value + "\n" + "Pass: " + txtPass.value);
-                newElemt.appendChild(newContent);
-                document.getElementById("txtResultado").appendChild(newElemt);
-                var c = document.getElementById("txtResultado");
-                c.innerHTML("hola");
-        */
+        var newElemt = document.createElement("h2");
+        var newContent = document.createTextNode(" " + res4);
+        newElemt.appendChild(newContent);
+        document.getElementById("txtResultado").appendChild(newElemt);
+     */
 
     } else {
         alert("ERROR EN LA CONSULTA");
+        /*
+        var newElemt = document.createElement("h2");
+        var newContent = document.createTextNode("" + res4);
+        newElemt.appendChild(newContent);
+        document.getElementById("txtResultado").appendChild(newElemt);
+ */
     }
     // document.write(resultado);
 }
