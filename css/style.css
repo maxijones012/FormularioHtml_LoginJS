@@ -80,3 +80,20 @@ h2 {
     background: rgba(0, 0, 0, 0.5);
     border-bottom: 2px solid white;
 }
+
+#salida {
+    margin: 30px;
+    padding: 10px;
+    text-align: center;
+    background: #59A5CD;
+    opacity: 0.9;
+    border-radius: 3px;
+}
+
+#txtResultado {
+    opacity: 1;
+    padding: 20px;
+    text-align: center;
+    font-size: 130%;
+    font-family: sans-serif;
+}

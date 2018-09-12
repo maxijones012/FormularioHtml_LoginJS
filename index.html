@@ -11,15 +11,15 @@
 <body>
     <div class="form">
         <div class="contenedor-form">
-            <h2>Ingrese consulta</h2>
+            <h2>Login</h2>
             <form action="#">
                 <input id="textUsuario" type="text" placeholder="Usuario">
                 <input id="txtPass" type="text" placeholder="Contraseña">
                 <input id="btnGenerar" type="submit" value="Generar Consulta" onclick="verificarSQL()">
 
-                <output>
-                    <h2 id="txtResultado"></h2>
-                </output>
+                <div id="salida">
+                    <output id="txtResultado"> Resultado </output>
+                </div>
             </form>
 
         </div>
